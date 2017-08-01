@@ -7,6 +7,7 @@ var browserSync = require('browser-sync').create();
 
 var baseDir     = './src/';
 var rmteDir     = '/niekes.com';
+var tasks       = ['html', 'scss'];
 
 gulp.task('html', function() {
     return gulp.src(baseDir + 'index.html')
@@ -15,7 +16,7 @@ gulp.task('html', function() {
 });
 
 // Compile sass into CSS & auto-inject into browsers
-gulp.task('sass', function() {
+gulp.task('scss', function() {
     return gulp.src(baseDir + 'scss/*.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(gulp.dest('dist/css'))
@@ -23,7 +24,7 @@ gulp.task('sass', function() {
 });
 
 // use default task to launch Browsersync and watch JS files
-gulp.task('default', ['html', 'sass'], function () {
+gulp.task('default', tasks, function () {
 
     // Serve files from the root of this project
     browserSync.init({
@@ -35,11 +36,11 @@ gulp.task('default', ['html', 'sass'], function () {
     // add browserSync.reload to the tasks array to make
     // all browsers reload after tasks are complete.
     gulp.watch(baseDir + 'index.html', ['html-watch']);
-    gulp.watch(baseDir + 'scss/*.scss', ['sass-watch']);
+    gulp.watch(baseDir + 'scss/*.scss', ['scss-watch']);
 });
 
 gulp.task('deploy', function(){
-    gulp.start(['html', 'sass']);
+    gulp.start(tasks);
 });
 
 gulp.task('push', function(){
@@ -68,9 +69,9 @@ gulp.task('html-watch', ['html'], function (done) {
     done();
 });
 
-// create a task that ensures the `sass` task is complete before
+// create a task that ensures the `scss` task is complete before
 // reloading browsers
-gulp.task('sass-watch', ['sass'], function (done) {
+gulp.task('scss-watch', ['scss'], function (done) {
     browserSync.reload();
     done();
 });
