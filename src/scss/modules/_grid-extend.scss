@@ -1,0 +1,28 @@
+.col-xs-2_4{
+    @include make-xs-column(2.4);
+}
+
+.col-sm-2_4{
+    @include make-sm-column(2.4);
+}
+
+.col-md-2_4{
+    @include make-md-column(2.4);
+}
+
+.col-lg-2_4{
+    @include make-lg-column(2.4);
+}
+
+
+.equal{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    
+}
