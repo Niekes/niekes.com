@@ -7,7 +7,7 @@ var browserSync = require('browser-sync').create();
 
 var baseDir     = './src/';
 var rmteDir     = '/niekes.com';
-var tasks       = ['html', 'scss'];
+var tasks       = ['html', 'scss', 'img'];
 
 gulp.task('html', function() {
     return gulp.src(baseDir + 'index.html')
@@ -23,13 +23,22 @@ gulp.task('scss', function() {
         .pipe(browserSync.stream());
 });
 
+gulp.task('img', function() {
+    return gulp.src(baseDir + '/img/*.jpg')
+        .pipe(gulp.dest('dist/img'))
+        .pipe(browserSync.stream());
+});
+
+
 // use default task to launch Browsersync and watch JS files
 gulp.task('default', tasks, function () {
 
     // Serve files from the root of this project
     browserSync.init({
+        open: false,
+        reloadOnRestart: true,
         server: {
-            baseDir: './dist'
+            baseDir: './dist',
         }
     });
 
