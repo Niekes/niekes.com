@@ -17,7 +17,7 @@ gulp.task('html', function() {
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('scss', function() {
-    return gulp.src(baseDir + 'scss/*.scss')
+    return gulp.src(baseDir + 'scss/**/*.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
@@ -45,7 +45,7 @@ gulp.task('default', tasks, function () {
     // add browserSync.reload to the tasks array to make
     // all browsers reload after tasks are complete.
     gulp.watch(baseDir + 'index.html', ['html-watch']);
-    gulp.watch(baseDir + 'scss/*.scss', ['scss-watch']);
+    gulp.watch(baseDir + 'scss/**/*.scss', ['scss-watch']);
 });
 
 gulp.task('deploy', function(){
