@@ -22,4 +22,4 @@ jobs:
           protocol: ftps
           log-level: verbose
           local-dir: ./src/
-          server-dir: /niekes.com
+          server-dir: /niekes.com/
