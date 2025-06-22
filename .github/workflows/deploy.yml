@@ -20,4 +20,5 @@ jobs:
           password: ${{ secrets.FTPS_PASSWORD }}
           port: 21
           protocol: ftps
-          local-dir: ./src
+          local-dir: ./src/
+          server-dir: ./niekes.com/
