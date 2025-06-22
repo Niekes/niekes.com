@@ -1,14 +1,7 @@
-# Aktiviere mod_rewrite
-RewriteEngine On
+RewriteEngine on
 
-# --- 1. HTTP zu HTTPS umleiten ---
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://niekes.com/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
 
-# --- 2. .html verstecken (internes Umschreiben) ---
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^([^/]+)$ $1.html [L]
-
-# --- 3. .html-URLs auf saubere URLs umleiten (für SEO) ---
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/([^/]+)\.html\s
-RewriteRule ^([^/]+)\.html$ /$1 [R=301,L]
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
