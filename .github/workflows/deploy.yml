@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.FTPS_USERNAME }}
           password: ${{ secrets.FTPS_PASSWORD }}
           port: 21
-          protocol: ftp
+          protocol: sftp
           log-level: verbose
           local-dir: ./src/
-          server-dir: ./niekes.com/
+          server-dir: /niekes.com
