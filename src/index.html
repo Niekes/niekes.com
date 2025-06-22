@@ -1,35 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <link type="text/css" rel="stylesheet" href="css/styles.css"  media="screen,projection"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+        />
+
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+            html,
+            body {
+                font-family: "Noto Sans", sans-serif;
+                font-optical-sizing: auto;
+                font-style: normal;
+                font-weight: 400;
+                font-variation-settings: "wdth" 100;
+            }
+
+            body {
+                background-color: #f0f0f0;
+                font-family: "Noto Sans", sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: calc(100dvh - 2rem);
+                min-height: calc(100vh - 2rem);
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        </style>
     </head>
-    <body>
-        <div class="container">
-
-            <div class="row equal firstRow">
-                <div class="col-xs-2  col-sm-2  col-md-2  col-lg-2"><img src="./img/stefan_nieke.jpg" class="img-responsive img-rounded" alt="Stefan Nieke"></div>
-                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 text-right text-uppercase"><h1 class="text-jumbo">Stefan<br>Nieke</h1></div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right text-uppercase"><h4>Software developer</h4></div>
-            </div>
-
-
-            <div class="row lead mainParagraph">
-                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 text-center">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
-            </div>
-
-            <div class="row text-center">
-                <div class="col-xs-2_4 col-sm-2_4 col-md-2_4 col-lg-2_4"><a target="_blank" href="https://blog.niekes.com">// blog</a></div>
-                <div class="col-xs-2_4 col-sm-2_4 col-md-2_4 col-lg-2_4"><a target="_blank" href="https://github.com/Niekes">// github</a></div>
-                <div class="col-xs-2_4 col-sm-2_4 col-md-2_4 col-lg-2_4"><a target="_blank" href="https://bl.ocks.org/niekes">// bl.ocks</a></div>
-                <div class="col-xs-2_4 col-sm-2_4 col-md-2_4 col-lg-2_4"><a target="_blank" href="https://www.flickr.com/photos/niekes/">// flickr</a></div>
-                <div class="col-xs-2_4 col-sm-2_4 col-md-2_4 col-lg-2_4"><a target="_blank" href="https://www.linkedin.com/in/stefan-nieke-63a2766b/">// linkedin</a></div>
-            </div>
-        </div>
+    <body class="flex items-center justify-center h-screen bg-gray-100">
+        <h1 class="text-3xl font-bold">Coming soon</h1>
+        <a href="./imprint">Imprint</a>
     </body>
 </html>
